@@ -1,16 +1,17 @@
-[DEBUG] [2021-05-10 16:44] testDataSource()
-[DEBUG] [2021-05-10 16:44] DataSource HikariDataSource (HikariPool-1)
-[DEBUG] [2021-05-10 16:44] LoginTimeout30
-[DEBUG] [2021-05-10 16:45] testDataSource()
-[DEBUG] [2021-05-10 16:45] DataSource HikariDataSource (HikariPool-1)
-[DEBUG] [2021-05-10 16:45] LoginTimeout30
-[DEBUG] [2021-05-10 16:51] testDataSource()
-[DEBUG] [2021-05-10 16:51] DataSource HikariDataSource (HikariPool-1)
-[DEBUG] [2021-05-10 16:51] LoginTimeout30
-[DEBUG] [2021-05-10 16:51] testOpenSession()
-[DEBUG] [2021-05-10 16:51] session org.apache.ibatis.session.defaults.DefaultSqlSession@3b30f9d4
-[DEBUG] [2021-05-10 16:58] testDataSource()
-[DEBUG] [2021-05-10 16:58] DataSource HikariDataSource (HikariPool-1)
-[DEBUG] [2021-05-10 16:58] LoginTimeout30
-[DEBUG] [2021-05-10 16:58] testOpenSession()
-[DEBUG] [2021-05-10 16:58] session org.apache.ibatis.session.defaults.DefaultSqlSession@c9afea0
+[DEBUG] [2021-05-11 11:16] testDataSource()
+[DEBUG] [2021-05-11 11:16] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-05-11 11:16] LoginTimeout30
+[DEBUG] [2021-05-11 11:16] testOpenSession()
+[DEBUG] [2021-05-11 11:16] session org.apache.ibatis.session.defaults.DefaultSqlSession@54f7f32a
+[DEBUG] [2021-05-11 13:26] testDataSource()
+[DEBUG] [2021-05-11 13:26] DataSource HikariDataSource (HikariPool-1)
+[DEBUG] [2021-05-11 13:26] LoginTimeout30
+[DEBUG] [2021-05-11 13:26] testOpenSession()
+[DEBUG] [2021-05-11 13:26] session org.apache.ibatis.session.defaults.DefaultSqlSession@3bc4be5d
+[DEBUG] [2021-05-11 13:26] testSelectStudentById()
+[DEBUG] [2021-05-11 13:26] ==>  Preparing: select stud_id, name, email, dob, phone from students where stud_id = ?;
+[DEBUG] [2021-05-11 13:26] ==> Parameters: 1(Integer)
+[TRACE] [2021-05-11 13:26] <==    Columns: stud_id, name, email, dob, phone
+[TRACE] [2021-05-11 13:26] <==        Row: 1, Timothy, timothy@gmail.com, 1988-04-25, 123-123-1234
+[DEBUG] [2021-05-11 13:26] <==      Total: 1
+[DEBUG] [2021-05-11 13:26] Student [1, Timothy, timothy@gmail.com, Mon Apr 25 00:00:00 KST 1988, null]
