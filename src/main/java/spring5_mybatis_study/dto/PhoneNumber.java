@@ -20,9 +20,9 @@ public class PhoneNumber {
 			if (parts.length > 0)
 				this.countryCode = parts[0];
 			if (parts.length > 1)
-				this.countryCode = parts[1];
+				this.stateCode = parts[1];
 			if (parts.length > 2)
-				this.countryCode = parts[2];
+				this.number = parts[2];
 		}
 	}
 
