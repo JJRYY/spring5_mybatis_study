@@ -3,7 +3,7 @@
 <mapper namespace="spring5_mybatis_study.mapper.StudentMapper">
 	
 	<sql id="selectSQL">
-		select stud_id, name, email, dob, phone from students	
+		select stud_id, name, email, dob, phone, gender from students	
 	</sql>
 	
 	<sql id="whereSQL">
