@@ -19,8 +19,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import spring5_mybatis_study.config.ContextDataSourceTest;
 import spring5_mybatis_study.config.ContextRoot;
+import spring5_mybatis_study.dto.Gender;
 import spring5_mybatis_study.dto.PhoneNumber;
 import spring5_mybatis_study.dto.Student;
 
@@ -29,7 +29,7 @@ import spring5_mybatis_study.dto.Student;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StudentMapperTest {
 	
-	private static final Log log = LogFactory.getLog(ContextDataSourceTest.class);
+	private static final Log log = LogFactory.getLog(StudentMapperTest.class);
 
 	@Autowired
 	private StudentMapper mapper;
@@ -143,4 +143,36 @@ public class StudentMapperTest {
 		log.debug(seletedStd.toString());
 	}
 
+	@Test
+	public void test09InsertEnumStudent() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName()+"()");
+		
+		Calendar newDate = GregorianCalendar.getInstance();
+		newDate.set(1990, 2, 28);
+		
+		Student student = new Student();
+		student.setStudId(3);
+		student.setName("test");
+		student.setEmail("test@test.co.kr");
+		student.setPhone(new PhoneNumber("010-1234-1234"));
+		student.setDob(newDate.getTime());
+		student.setGender(Gender.FEMALE);
+		
+		int res = mapper.insertEnumStudent(student);
+		Assert.assertEquals(1, res);
+		
+		student.setStudId(4);
+		student.setName("test4");
+		student.setEmail("test4@test.co.kr");
+		student.setPhone(new PhoneNumber("010-1234-1234"));
+		student.setDob(newDate.getTime());
+		student.setGender(Gender.MALE);
+		
+		int res1 = mapper.insertEnumStudent(student);
+		Assert.assertEquals(1, res1);
+		
+		mapper.deleteStudent(3);
+		mapper.deleteStudent(4);
+		
+	}
 }

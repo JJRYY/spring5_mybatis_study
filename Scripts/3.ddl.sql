@@ -52,3 +52,13 @@ primary key(course_id, stud_id),
 constraint fk_enrollment_stud foreign key(stud_id) references mybatis_study.students(stud_id),
 constraint fk_enrollment_course foreign key(course_id) references mybatis_study.courses(course_id)
 );
+
+alter table students add gender tinyint unsigned;
+
+create table user_pics (
+	id int(11) not null auto_increment comment 'id',
+	name varchar(50) not null comment 'name',
+	pic longblob comment 'pic',
+	bio longtext collate utf8_unicode_ci comment 'bio',
+	primary key(id)
+);
