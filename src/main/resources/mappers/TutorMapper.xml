@@ -6,7 +6,7 @@
 		<id property="tutorId" column="tutor_id"/>
 		<id property="name" column="tutor_name"/>
 		<id property="email" column="email"/>
-		<collection property="courses" resultMap="spring5_mybatis_study.mappers.CourseMapper.ResCourse"/>
+		<collection property="courses" resultMap="spring5_mybatis_study.mapper.CourseMapper.ResCourse"/>
 	</resultMap>
 	
 	<select id="selectTutorByTutorId" resultMap="resTutor">

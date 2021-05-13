@@ -25,4 +25,17 @@ select t.tutor_id, t.name as tutor_name, email, c.course_id, c.name, description
 	from tutors t join courses c on t.tutor_id=c.tutor_id
 	where t.tutor_id=1;
 
-delete from students where stud_id in (3, 4);
+select course_id, name, description, start_date, end_date, tutor_id from courses;
+
+select course_id, name, description, start_date, end_date, tutor_id 
+	from courses
+	where name like '%java%';
+
+select course_id, name, description, start_date, end_date, tutor_id 
+	from courses
+	where start_date <= '2013-04-01';
+
+select course_id, name, description, start_date, end_date, tutor_id 
+	from courses
+	where end_date <= '2013-07-13';
+	

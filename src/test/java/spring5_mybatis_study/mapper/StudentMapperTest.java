@@ -222,4 +222,23 @@ public class StudentMapperTest {
 		list.stream().forEach(System.out::println);
 		
 	}
+	
+	@Test
+	public void test12UpdateSetStudent() {
+		log.debug(Thread.currentThread().getStackTrace()[1].getMethodName()+"()");
+		
+		Student student = new Student();
+		student.setStudId(1);
+		student.setPhone(new PhoneNumber("987-654-3211"));
+		student.setDob(new Date());
+		
+		int res = mapper.updateSetStudent(student);
+		Assert.assertSame(1, res);
+		
+		student.setPhone(new PhoneNumber("123-123-1234"));
+		student.setDob(new GregorianCalendar(1988, 04, 25).getTime());
+		
+		res = mapper.updateSetStudent(student);
+		Assert.assertSame(1, res);
+	}
 }
