@@ -156,4 +156,13 @@
 		</where>
 	</update>
 	
+	<!-- Transaction -->
+	<insert id="insertCourse" parameterType="Course">
+		insert into courses(course_id, name, description, start_date, end_date, tutor_id)
+		values (#{courseId}, #{name}, #{description}, #{startDate}, #{endDate}, #{tutorId})
+	</insert>
+	<delete id="deleteCourse">
+		delete from courses
+		where course_id=#{courseId}
+	</delete>
 </mapper>

@@ -24,4 +24,8 @@ public interface CourseMapper {
 	// set 조건
 	int updateSetCourse(Course course);
 	
+	// Transaction
+	int insertCourse(Course course);
+	int deleteCourse(int courseId);
+	
 }

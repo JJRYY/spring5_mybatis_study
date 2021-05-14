@@ -3,5 +3,10 @@ package spring5_mybatis_study.mapper;
 import spring5_mybatis_study.dto.Tutor;
 
 public interface TutorMapper {
+	Tutor selectTutorJoinCourseByTutorId(Tutor tutor);
 	Tutor selectTutorByTutorId(Tutor tutor);
+	
+	// Transaction
+	int insertTutor(Tutor tutor);
+	int deleteTutor(int tutorId);
 }

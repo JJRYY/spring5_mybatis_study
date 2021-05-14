@@ -6,6 +6,8 @@ select * from tutors;
 select * from user_pics;
 desc user_pics;
 
+delete from tutors where tutor_id = 5;
+
 select stud_id, name, email, dob, phone from students where stud_id = 1;
 
 select stud_id, name, email, dob
@@ -22,8 +24,8 @@ select stud_id, name, email, dob, phone, a.addr_id, street, city, state, zip, co
 
 -- 1:N
 select t.tutor_id, t.name as tutor_name, email, c.course_id, c.name, description, start_date, end_date
-	from tutors t join courses c on t.tutor_id=c.tutor_id
-	where t.tutor_id=1;
+	from tutors t left join courses c on t.tutor_id=c.tutor_id
+	where t.tutor_id=5;
 
 select course_id, name, description, start_date, end_date, tutor_id from courses;
 

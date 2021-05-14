@@ -8,6 +8,18 @@ public class Tutor {
 	private String email;
 	private Address address;
 	private List<Course> courses;
+	private PhoneNumber phone;
+
+	public Tutor() {
+	}
+
+	public Tutor(int tutorId, String name, String email, PhoneNumber phone, Address address) {
+		this.tutorId = tutorId;
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.address = address;
+	}
 
 	public int getTutorId() {
 		return tutorId;
@@ -49,10 +61,17 @@ public class Tutor {
 		this.courses = courses;
 	}
 
+	public PhoneNumber getPhone() {
+		return phone;
+	}
+
+	public void setPhone(PhoneNumber phone) {
+		this.phone = phone;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("Tutor [%s, %s, %s, %s, %s]", 
-				tutorId, name, email, address, courses);
+		return String.format("Tutor [%s, %s, %s, %s, %s, %s]", tutorId, name, email, address, courses, phone);
 	}
 
 }

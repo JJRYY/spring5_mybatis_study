@@ -9,7 +9,7 @@
 		<collection property="courses" resultMap="spring5_mybatis_study.mapper.CourseMapper.ResCourse"/>
 	</resultMap>
 	
-	<select id="selectTutorByTutorId" resultMap="resTutor">
+	<select id="selectTutorJoinCourseByTutorId" resultMap="resTutor">
 		select t.tutor_id
 			, t.name as tutor_name
 			, email
@@ -18,8 +18,25 @@
 			, description
 			, start_date
 			, end_date
-		from tutors t join courses c on t.tutor_id = c.tutor_id
+		from tutors t left join courses c on t.tutor_id = c.tutor_id
 		where t.tutor_id = #{tutorId};
 	</select>
+	
+	<select id="selectTutorByTutorId" resultType="Tutor">
+		select tutor_id, name, email, phone, addr_id
+		from tutors
+		where tutor_id = #{tutorId}
+	</select>
+	
+	<!-- Transaction -->
+	<insert id="insertTutor" parameterType="Tutor">
+		insert into tutors(tutor_id, name, email, phone, addr_id)
+		values (#{tutorId}, #{name}, #{email}, #{phone}, #{address.addrId})
+	</insert>
+	
+	<delete id="deleteTutor">
+		delete from tutors
+		where tutor_id = #{tutorId}
+	</delete>
 
 </mapper>
