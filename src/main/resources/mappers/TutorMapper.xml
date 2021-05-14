@@ -22,7 +22,12 @@
 		where t.tutor_id = #{tutorId};
 	</select>
 	
-	<select id="selectTutorByTutorId" resultType="Tutor">
+	<resultMap type="Tutor" id="resTutor2">
+		<id property="tutorId" column="tutor_id"/>
+		<result property="address.addrId" column="addr_id"/>
+	</resultMap>
+	
+	<select id="selectTutorByTutorId" resultMap="resTutor2">
 		select tutor_id, name, email, phone, addr_id
 		from tutors
 		where tutor_id = #{tutorId}

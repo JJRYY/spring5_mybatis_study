@@ -7,6 +7,7 @@ select * from user_pics;
 desc user_pics;
 
 delete from tutors where tutor_id = 5;
+delete from courses where course_id = 8;
 
 select stud_id, name, email, dob, phone from students where stud_id = 1;
 
