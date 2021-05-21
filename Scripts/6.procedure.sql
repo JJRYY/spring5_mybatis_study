@@ -19,7 +19,6 @@ select t.name as tutor, ifnull(count(c.name), 0) as total
 	from tutors t left join courses c on t.tutor_id = c.tutor_id 
 	group by t.tutor_id;
 	
-drop procedure if exists course_total;
 
 DROP PROCEDURE IF EXISTS mybatis_study.course_total;
 
