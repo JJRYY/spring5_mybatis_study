@@ -9,8 +9,12 @@ public class Course {
 	private Date startDate;
 	private Date endDate;
 	private int tutorId;
-	
+
 	public Course() {
+	}
+
+	public Course(int courseId) {
+		this.courseId = courseId;
 	}
 
 	public Course(int courseId, String name, String description, Date startDate, Date endDate, int tutorId) {
@@ -72,8 +76,8 @@ public class Course {
 
 	@Override
 	public String toString() {
-		return String.format("Course [%s, %s, %s, %s, %s, %s]", 
-				courseId, name, description, startDate, endDate, tutorId);
+		return String.format("Course [%s, %s, %s, %s, %s, %s]", courseId, name, description, startDate, endDate,
+				tutorId);
 	}
 
 }

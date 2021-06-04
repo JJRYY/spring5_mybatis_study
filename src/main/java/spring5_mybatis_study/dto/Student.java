@@ -11,6 +11,13 @@ public class Student {
 	private Address address;
 	private Gender gender;
 
+	public Student() {
+	}
+
+	public Student(int studId) {
+		this.studId = studId;
+	}
+
 	public int getStudId() {
 		return studId;
 	}
@@ -69,9 +76,9 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return String.format("Student [studId=%s, name=%s, email=%s, phone=%s, dob=%s, address=%s, gender=%s]", 
-				studId,	name, email, phone, dob, address, 
-				gender == Gender.FEMALE?"여자":(gender==Gender.MALE?"남자":"없음"));
+		return String.format("Student [studId=%s, name=%s, email=%s, phone=%s, dob=%s, address=%s, gender=%s]", studId,
+				name, email, phone, dob, address,
+				gender == Gender.FEMALE ? "여자" : (gender == Gender.MALE ? "남자" : "없음"));
 	}
 
 }
